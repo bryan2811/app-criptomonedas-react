@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import imagen from './cryptomonedas.png';
+import Formulario from './Components/Formulario';
 
 const Contenedor = styled.div`
   max-width: 900px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 2rem;
+  margin: 0 auto;
+  
+  @media (min-width:992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
 `;
 
 const Imagen = styled.img`
@@ -41,6 +46,8 @@ function App() {
 
         <div>
             <Heading>Cotiza Criptomonedas Al Instante</Heading>
+
+            <Formulario />
         </div>
     </Contenedor>
   );
