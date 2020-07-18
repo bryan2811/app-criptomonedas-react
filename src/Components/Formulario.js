@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import useMoneda from '../Hooks/useMoneda';
+import useCriptomoneda from '../Hooks/useCriptomoneda';
 
 const Boton = styled.input`
     margin-top: 20px;
@@ -35,9 +36,14 @@ const Formulario = () => {
     // Utilizar useMoneda
     const [ moneda, SelectMonedas, actualizarState ] = useMoneda('Elige tu Moneda', '', MONEDAS);
 
+    // Utilizar useCriptomoneda
+    const [criptomoneda, SelectCripto] = useCriptomoneda('Elige tu Criptomoneda', '');
+
     return ( 
         <form>
             <SelectMonedas />
+
+            <SelectCripto />
             <Boton type="submit" value="Calcular" />
         </form>
      );
